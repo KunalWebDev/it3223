@@ -1,1 +1,3 @@
-# it3223
+# IT3223
+
+Using Github as an example host
