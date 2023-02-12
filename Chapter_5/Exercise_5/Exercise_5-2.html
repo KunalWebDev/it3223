@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Future Value Calculator</title>
+   <link rel="stylesheet" type="text/css" href="future_value.css">
+   <style>
+     /* Add styles for the calculator here */
+     article,
+     aside,
+     figure,
+     footer,
+     header,
+     main,
+     nav,
+     section {
+       display: block;
+     }
+     body {
+       font-family: Arial, Helvetica, sans-serif;
+       background-color: white;
+       margin: 0 auto;
+       width: 500px;
+       border: 3px solid blue;
+     }
+     main {
+       padding: 0 2em 1em;
+     }
+     h1 {
+       color: blue;
+     }
+     label {
+       float: left;
+       width: 11em;
+       text-align: right;
+       padding-bottom: 0.5em;
+     }
+     input {
+       margin-left: 1em;
+       margin-bottom: 0.5em;
+     }
+   </style>
+ </head>
+ <body>
+   <h1>Future Value Calculator</h1>
+   <form>
+     <div class="input-group">
+       <label>Total Investment:</label>
+       <input type="number" id="investment" required>
+     </div>
+     <div class="input-group">
+       <label for="rate">Annual Interest Rate:</label>
+       <input type="number" id="rate" required>
+     </div>
+     <div class="input-group">
+       <label>Number of Years:</label>
+       <input type="number" id="years" required>
+     </div>
+     <div class="input-group">
+       <label>Future Value:</label>
+       <input type="text" id="futureValue" disabled>
+     </div>
+     <label> </label>
+     <input
+       type="submit"
+       value="Calculate"
+       onclick="calculateFutureValue(); return false;"
+     />
+   </form>
+ </div>
+ <!-- Add JavaScript code to perform calculation -->
+<script>
+function calculateFutureValue() {
+ // Get the user inputs
+ var investment = document.getElementById("investment").value;
+ var rate = document.getElementById("rate").value / 100; 
+ var years = document.getElementById("years").value;
+
+ // Validate the inputs
+ if (investment < 0) {
+   alert("Enter a positive number or 0 for investment");
+   return;
+ }
+
+ if (years < 0) {
+   alert("Enter a positive number or 0 for number of years");
+   return;
+ }
+
+ // Calculate the future value
+ var futureValue = investment * (1 + rate) ** years;
+
+ // Display the result
+ document.getElementById("futureValue").value = futureValue.toFixed(2);
+
+ if (futureValue < 0) {
+   alert("Future value cannot be negative");
+   return;
+ }
+}
+</script>
