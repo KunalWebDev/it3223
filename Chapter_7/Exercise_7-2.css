@@ -1,0 +1,64 @@
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    background-color: white;
+    width: 900px;
+    margin: 0 auto;
+    border: 3px solid blue;
+    padding: 1em;
+}
+
+
+h1 {
+    color: blue;
+    margin: 0;
+    padding: 0 0 1em 0;
+    text-align: center;
+}
+
+
+h2 {
+    color: blue;
+    font-size: 140%;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+
+p {
+    margin: 0;
+    padding: 0.5em;
+    text-align: center;
+}
+
+#image_list {
+    display: flex;
+    text-align: center;
+}
+
+img {
+    height: 90%;
+    width: 90%;
+}
+
+button {
+    font-size: 100%;
+}
+
+body {
+    text-align: center;
+}
+
+/* Made the button bigger */
+input {
+    font-size: 98%;
+}
+
+ul {
+    display: none;
+}
+
+/* Changed*/
+#image_list{
+    list-style: none;
+}

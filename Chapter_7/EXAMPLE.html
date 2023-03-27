@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<<title>Simple Javascript Slideshow</title>
+<script type="text/javascript">
+var imgsrc = new Array();
+imgsrc[0]="photos/photo1.jpg";
+imgsrc[1]="photos/photo2.jpg";
+imgsrc[2]="photos/photo3.jpg";
+imgsrc[3]="photos/photo4.jpg";
+imgsrc[4]="photos/photo5.jpg";
+imgsrc[5]="photos/photo6.jpg";
+for (var j=0;j<imgsrc.length;j++)
+{
+preload[j] = new Image;
+preload[j].src = imgsrc[j];
+}
+function mode(param)
+{
+smode=param;
+}
+function startSlideshow()
+{
+if(smode=="play")
+{
+document.getElementById("play").disabled="disabled";
+document.getElementById("pause").disabled="";
+document.getElementById("stop").disabled="";
+document.getElementById("slideshow").src=imgsrc[i];
+i++;
+setTimeout("startSlideshow()",1000);
+}
+else if(smode=="pause")
+{
+document.getElementById("pause").disabled="disabled";
+document.getElementById("play").disabled="";
+document.getElementById("play").value="Resume";
+}
+else if(smode=="stop")
+{
+document.getElementById("play").disabled="";
+document.getElementById("play").value="Play";
+document.getElementById("pause").disabled="disabled";
+document.getElementById("stop").disabled="disabled";
+document.getElementById("slideshow").src=imgsrc[0];
+i=0;
+}
+if(i==imgsrc.length)
+{
+i=0;
+}
+}
+</script>
+</head>
+<body>
+<img id="slideshow" src="photos/photo1.jpg" />
+</body>
+</html>
