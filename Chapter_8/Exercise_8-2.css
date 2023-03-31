@@ -1,0 +1,61 @@
+
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 90%;
+  background-color: white;
+  width: 790px;
+  margin: 0 auto;
+  border: 3px solid blue;
+  padding: 1em;
+}
+
+h1 {
+  color: blue;
+  font-size: 230%;
+  margin: 0;
+  padding: 0 0 1em 0;
+  text-align: center;
+}
+
+
+p {	
+  margin: 0;
+  padding: .5em 0 ;
+  text-align: center;
+}
+
+/* MADE <ul> tags from html file to div tags
+ul {
+	padding-left: 0;
+	text-align: center;
+}
+*/
+div {
+	/*text-align: left;*/
+	margin-left: auto;
+    margin-right: auto; 
+}
+
+li {
+    padding-left: 50;
+	display: inline;
+}
+
+
+img {
+  height: 80%;  
+  width: 45%;  
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+

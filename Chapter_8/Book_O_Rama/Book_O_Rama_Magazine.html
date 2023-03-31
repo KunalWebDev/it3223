@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Magazines</title>
+    <link rel="stylesheet" type="text/css" href="Book_O_Rama.css">
+</head>
+<body>
+  <h1>Sample Magazines</h1>
+  <table>
+    <tr> 
+      <th>Magazine</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr> 
+    <tr>
+    <!-- My custom Magazine names below  because why not-->
+    <td>Marvel Magazine</td>
+    <td><input type="number" id="price-1" value="0"></td>
+    <td><input type="number" id="quantity-1" value="0"></td>
+   </tr>
+   <tr>
+    <!-- My custom Magazine names below -->
+    <td>DC Comics Magazine</td>
+    <td><input type="number" id="price-2" value="0"></td>
+    <td><input type="number" id="quantity-2" value="0"></td>
+   </tr>
+   <tr>
+    <!-- My custom Magazine names below -->
+    <td>Star Wars Magazine</td>
+     <td><input type="number" id="price-3" value="0"></td>
+         <td><input type="number" id="quantity-3" value="0"></td>
+   </tr>
+  </table>
+  <button onclick="calculateTotal()">Calculate Total</button>
+  <button onclick="clearEntries()">Clear Entries</button>
+  <script src="script.js"></script> 
+</body>
+<script>
+  function calculateTotal() 
+  {
+     var price1 = document.getElementById("price-1").value;
+     var price2 = document.getElementById("price-2").value;
+     var price3 = document.getElementById("price-3").value;
+     var quantity1 = document.getElementById("quantity-1").value;
+     var quantity2 = document.getElementById("quantity-2").value;
+     var quantity3 = document.getElementById("quantity-3").value;
+
+
+      //check if the quantity is greater than zero
+      if(quantity1 < 0 || quantity2 == 0 || quantity3 == 0)
+      {
+          alert("Enter a positive number for quantity");
+          return;
+      }
+
+    if(price1 < 0 || price2 < 0 || price3 < 0)
+      {
+          alert("Enter a positive number for quantity");
+          return;
+      }
+
+      var total = (price1 * quantity1) + (price2 * quantity2) + (price3 * quantity3);
+      alert("Total: $" + total);
+    }
+
+    
+
+
+    function clearEntries() 
+    {
+      var price1 = document.getElementById("price-1").value = 0;
+      var price2 = document.getElementById("price-2").value = 0;
+      var price3 = document.getElementById("price-3").value = 0;
+      var quantity1 = document.getElementById("quantity-1").value = 0;
+      var quantity2 = document.getElementById("quantity-2").value = 0;
+      var quantity3 = document.getElementById("quantity-3").value = 0;
+      reset = 0; 
+    }
+
+
+</script>
+</html>
