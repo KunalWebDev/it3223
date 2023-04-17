@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Style for the thumbnail images */
+      .thumbnail {
+        height: 100px;
+        width: 100px;
+        float: left;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      /* Style for the larger image */
+      #largeImg {
+        display: none;
+        width: 500px;
+        height: 500px;
+        margin-top: 20px;
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // Function to show the large image on mouseover
+        $(".thumbnail").mouseover(function() {
+          $("#largeImg").attr("src", $(this).attr("src").replace("-thumbnail", ""));
+          $("#largeImg").fadeIn();
+        });
+
+        // Function to hide the large image on mouseout
+        $(".thumbnail").mouseout(function() {
+          $("#largeImg").fadeOut();
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Thumbnails -->
+    <img class="thumbnail" src="joker-thumbnail.png">
+    <img class="thumbnail" src="joker-thumbnail.png">
+    <img class="thumbnail" src="joker-thumbnail.png">
+
+    <!-- Large image -->
+    <img id="largeImg">
+  </body>
+</html>
