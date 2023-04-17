@@ -1,0 +1,90 @@
+/* CSS for the Lightbox plugin */
+/* Hide the lightbox initially */
+
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  background-color: #3D3B3B;
+  width: 1000px;
+  margin: 0 auto;
+  border: 9px solid black;
+  padding: 1em;
+}
+
+
+
+h1 {
+  margin: 0;
+  padding: 0.1em;
+  text-align: left;
+  text-decoration: none;
+  /*The below code may not be needed since a:link will take care of the color
+  changes */
+  color: black 
+}
+
+h4 {
+  margin: 0;
+  padding: 0.1em;
+  text-align: left;
+  color: white;
+  text-decoration: none;
+  /*The below code may not be needed since a:link will take care of the color
+   changes */
+  color: white 
+}
+
+.close {
+  font-size: 100px;
+  font-weight: 500;
+  display: inline-block;
+  transform: rotate(45deg);
+  color: #938D8D; 
+}
+
+/*
+
+#lightbox a:hover {
+  opacity: 1;
+}
+
+section {
+ width: 100%; 
+}
+
+.column {
+ float: left; 
+ width: 33.33%; 
+}
+
+.column p {
+ margin: 0 0 10px 0; 
+}
+
+img {
+ width: 30%; 
+ float: left; 
+}
+
+*/
+
+a img {
+ border: white;
+ height: 90%;
+ width: 90%;
+}
+
+a:link {
+      text-decoration: none;
+      color: white
+
+}
+
+
+
+
+@media (max-width:800px) {
+ .column {
+   width: 50%; 
+ } 
+}

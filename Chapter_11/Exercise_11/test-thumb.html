@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Toggle Image Size Example</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha384-cF8HFLxKJNJg2A00slbB/8t/qcJ1Oz69jG0NtGi0vt1TD+gNvcJQwDJkOZ+UEQ+W" crossorigin="anonymous">
+	<style>
+		img {
+			
+			
+			width: 300px;
+			height: auto;
+			
+			/*
+			height: 80%;
+			width: 80%;
+			*/
+
+		}
+		img.small {
+			width: 100px;
+		}
+
+		body {
+		  font-family: Verdana, Arial, Helvetica, sans-serif;
+		  font-size: 100%;
+		  background-color: #3D3B3B;
+		  width: 1000px;
+		  margin: 0 auto;
+		  border: 9px solid black;
+		  padding: 1em;
+		}
+
+
+
+		h1 {
+		  margin: 0;
+		  padding: 0.1em;
+		  text-align: left;
+		  text-decoration: none;
+		  /*The below code may not be needed since a:link will take care of the color
+		  changes */
+		  color: black 
+		}
+
+		h4 {
+			text-decoration: none;
+			color: white;
+		}
+
+		p {
+
+			color: white;
+		}
+
+		a:link {
+		      text-decoration: none;
+		      color: white
+
+		}
+
+		
+		.toggleBtn button {
+		  font-size: 80px;
+		  font-weight: 500;
+		  display: inline-block;
+		  transform: rotate(45deg);
+		  color: white; 
+
+		}
+
+
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha384-9fkCFv7gJ99a1tHxLxjLQ+QYPTfmBdEM2Bn+CUJH1e/bh++bBXJ8SKs+3q4C4fyZ" crossorigin="anonymous"></script>
+	<script>
+		function toggleSize() {
+			var img = document.getElementById("myImg");
+			if (img.classList.contains("small")) {
+				img.classList.remove("small");
+				document.getElementById("toggleBtn").innerText = "Make Small";
+			} else {
+				img.classList.add("small");
+				document.getElementById("toggleBtn").innerText = "Make Big";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>About Us</h1><br>
+
+	<div>
+		<a href="building_1.png" data-lightbox="image-1" data-title="Image Caption">
+			<img id="myImg" src="building_1.png" alt="Image">
+				<p>Front</p>
+            	<p>Image 1 of 4<p>
+		</a>
+
+		<a href="building_2.png" data-lightbox="image-1" data-title="Image Caption">
+			<img id="myImg" src="building_2.png" alt="Image">
+				<p>Left Side</p>
+            	<p>Image 2 of 4<p>
+		</a>
+
+		<a href="snow.png" data-lightbox="image-1" data-title="Image Caption">
+			<img id="myImg" src="snow.png" alt="Image">
+				<p>Snow</p>
+            	<p>Image 3 of 4<p>
+		</a>
+
+		<a href="forest.png" data-lightbox="image-1" data-title="Image Caption">
+			<img id="myImg" src="forest.png" alt="Image">
+				<h4>Forest</h4>
+            	<p>Image 4 of 4<p>
+		</a>
+
+
+	</div>
+
+	<p>
+
+		<!-- <div> <span class="toggleBtn" onclick="toggleSize()">+</div> -->
+			
+		<button id="toggleBtn"  onclick="toggleSize()">Make Small</button> 
+	</p>
+</body>
+</html>
