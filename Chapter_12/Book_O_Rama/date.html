@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Current Time and System Time</title>
+    <script>
+      function showTime() {
+        // Get the current time
+        const now = new Date();
+        const currentTime = now.toLocaleTimeString();
+
+        // Get the system time
+        const systemTime = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
+
+        // Display the times in the HTML
+        document.getElementById("current-time").innerHTML = "Current Time: " + currentTime;
+        document.getElementById("system-time").innerHTML = "System Time: " + systemTime;
+      }
+    </script>
+  </head>
+  <body onload="showTime()">
+    <h1>Current Time and System Time</h1>
+    <p id="current-time"></p>
+    <p id="system-time"></p>
+  </body>
+</html>

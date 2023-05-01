@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Title Generator</title>
+	<style>
+		h1 {
+			color: #0066ff;
+		}
+		p {
+			font-size: 20px;
+			line-height: 1.5;
+		}
+		.highlight {
+			background-color: yellow;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Book Title Generator</h1>
+	<p>Looking for inspiration for your next book title? Look no further! Our book title generator uses a complex algorithm to generate titles that are sure to grab your readers' attention.</p>
+	<p>Simply click the "Generate" button below to get started:</p>
+	<button id="generateButton" onclick="generateTitle()">Generate</button>
+	<p>Your book title:</p>
+	<p id="title"></p>
+	
+	<script>
+		function generateTitle() {
+			var adjectives = ["Mysterious", "Gripping", "Suspenseful", "Haunting", "Enthralling", "Mesmerizing", "Intriguing"];
+			var nouns = ["Secrets", "Shadows", "Echoes", "Whispers", "Silence", "Mystery", "Darkness", "Nightmares"];
+			var randomNumber1 = Math.floor(Math.random() * adjectives.length);
+			var randomNumber2 = Math.floor(Math.random() * nouns.length);
+			var title = adjectives[randomNumber1] + " " + nouns[randomNumber2];
+			document.getElementById("title").innerHTML = "<span class='highlight'>" + title + "</span>";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Total Cost Calculator</title>
+</head>
+<body>
+	<h1>Total Cost Calculator</h1>
+	<form>
+		<label for="price">Price:</label>
+		<input type="number" id="price" name="price"><br><br>
+		<label for="quantity">Quantity:</label>
+		<input type="number" id="quantity" name="quantity"><br><br>
+		<label for="tax">Tax:</label>
+		<input type="number" id="tax" name="tax"><br><br>
+		<label for="shipping">Shipping:</label>
+		<input type="number" id="shipping" name="shipping"><br><br>
+		<button type="button" onclick="calculateTotal()">Calculate Total</button><br><br>
+		<label for="total">Total Cost:</label>
+		<input type="text" id="total" name="total" readonly>
+	</form>
+	
+	<script>
+		function calculateTotal() {
+			var price = parseFloat(document.getElementById("price").value);
+			var quantity = parseFloat(document.getElementById("quantity").value);
+			var tax = parseFloat(document.getElementById("tax").value);
+			var shipping = parseFloat(document.getElementById("shipping").value);
+			var totalCost = price * quantity + tax + shipping;
+			document.getElementById("total").value = totalCost.toFixed(2);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Title Generator</title>
+	<style>
+		/* Add some basic styles */
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			margin: 0;
+			padding: 20px;
+			background-color: #333;
+			color: white;
+			text-align: center;
+		}
+
+		button {
+			margin: 10px;
+			padding: 10px;
+			font-size: 18px;
+		}
+
+		.highlight {
+			background-color: yellow;
+			font-weight: bold;
+		}
+
+		/* Style the current time and system time display */
+		#time-display {
+			text-align: center;
+			font-size: 24px;
+			margin: 20px 0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Book Title Generator</h1>
+	<div id="time-display">
+		Current time: <span id="current-time"></span><br>
+		System time: <span id="system-time"></span>
+	</div>
+	<button id="generate-title">Generate Title</button>
+	<p id="title"></p>
+	<script>
+		// Function to generate a random book title
+		function generateTitle() {
+			var adjectives = ["Gone", "Lost", "Forgotten", "Hidden", "Broken", "Fallen", "Missing", "Silent", "Dark"];
+			var nouns = ["Hope", "Dream", "Memory", "Secret", "Whisper", "Echo", "Heart", "Star", "Shadow", "Light"];
+			var adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+			var noun = nouns[Math.floor(Math.random() * nouns.length)];
+			var title = adjective + " " + noun;
+			document.getElementById("title").innerHTML = title;
+			document.getElementById("title").classList.add("highlight");
+		}
+
+		// Display the current time and system time
+		function updateTime() {
+			var now = new Date();
+			var current_time = now.toLocaleTimeString();
+			document.getElementById("current-time").innerHTML = current_time;
+
+			var system_time = now.toString();
+			document.getElementById("system-time").innerHTML = system_time;
+		}
+
+		// Call the updateTime function once every second
+		setInterval(updateTime, 1000);
+
+		// Call the generateTitle function when the button is clicked
+		document.getElementById("generate-title").addEventListener("click", generateTitle);
+	</script>
+</body>
+</html>
+In this updated version, we added a div with the id of time-display that will contain the current time and system time. I added some CSS styles to format the display.
+
+I created a  function called updateTime that gets the current time and system time using the Date object and updates the corresponding span elements with the id of current-time and system-time, respectively. I added a call to this function using the setInterval method to update the time once every second.
+
+
+
+
+
+

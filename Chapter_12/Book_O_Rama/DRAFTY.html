@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample Magazines</title>
+    <link rel="stylesheet" type="text/css" href="Book_O_Rama.css">
+    <script type="text/javascript">
+      function calculateTotal() {
+        // Get the values of the input fields
+        const price1 = parseInt(document.getElementById("price-1").value);
+        const quantity1 = parseInt(document.getElementById("quantity-1").value);
+        const tax1 = parseInt(document.getElementById("tax-1").value);
+        const ship1 = parseInt(document.getElementById("ship-1").value);
+        
+        const price2 = parseInt(document.getElementById("price-2").value);
+        const quantity2 = parseInt(document.getElementById("quantity-2").value);
+        const tax2 = parseInt(document.getElementById("tax-2").value);
+        const ship2 = parseInt(document.getElementById("ship-2").value);
+        
+        const price3 = parseInt(document.getElementById("price-3").value);
+        const quantity3 = parseInt(document.getElementById("quantity-3").value);
+        const tax3 = parseInt(document.getElementById("tax-3").value);
+        const ship3 = parseInt(document.getElementById("ship-3").value);
+        
+        // Calculate the total cost for each magazine
+        const total1 = price1 * quantity1 + tax1 + ship1;
+        const total2 = price2 * quantity2 + tax2 + ship2;
+        const total3 = price3 * quantity3 + tax3 + ship3;
+
+        // Calculate the grand total cost
+        const grandTotal = total1 + total2 + total3;
+        
+        // Display the total cost for each magazine in the output fields
+        document.getElementById("total-1").value = total1;
+        document.getElementById("total-2").value = total2;
+        document.getElementById("total-3").value = total3;
+
+        // Display the grand total cost in a new output field
+        document.getElementById("grand-total").value = grandTotal;
+      }
+
+    function clearEntries() 
+    {
+      var price1 = document.getElementById("price-1").value = 0;
+      var price2 = document.getElementById("price-2").value = 0;
+      var price3 = document.getElementById("price-3").value = 0;
+      var quantity1 = document.getElementById("quantity-1").value = 0;
+      var quantity2 = document.getElementById("quantity-2").value = 0;
+      var quantity3 = document.getElementById("quantity-3").value = 0;
+      var tax1= document.getElementById("tax-1").value = 0;
+      var tax2 = document.getElementById("tax-2").value = 0;
+      var tax3 = document.getElementById("tax-3").value = 0;
+      var ship1= document.getElementById("ship-1").value = 0;
+      var ship2 = document.getElementById("ship-2").value = 0;
+      var ship3 = document.getElementById("ship-3").value = 0;
+
+      reset = 0; 
+    }
+
+     /* This Displays the time for the current date and the time from system */
+    function showTime() {
+        // Get the current time
+        const now = new Date();
+        const currentTime = now.toLocaleTimeString();
+
+        // Get the system time
+        const systemTime = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
+
+        // Display the times in the HTML
+        document.getElementById("current-time").innerHTML = "Current Time: " + currentTime;
+        document.getElementById("system-time").innerHTML = "System Time: " + systemTime;
+    }
+
+    </script>
+  </head>
+  
+  <body>
+    <h1>Sample Magazines</h1>
+    <table>
+      <tr> 
+        <th>Magazine</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Tax</th>
+        <th>Shipping</th>
+        <th>Total Cost</th>
+      </tr> 
+      <tr>
+        <td>Marvel Magazine</td>
+        <td><input type="number" id="price-1" value="0"></td>
+        <td><input type="number" id="quantity-1" value="0"></td>
+        <td><input type="number" id="tax-1" value="0"></td>
+        <td><input type="number" id="ship-1" value="0"></td>
+        <td><input type="text" id="total-1" value="" disabled></td>
+      </tr>
+      <tr>
+        <td>DC Comics Magazine</td>
+        <td><input type="number" id="price-2" value="0"></td>
+        <td><input type="number" id="quantity-2" value="0"></td>
+        <td><input type="number" id="tax-2" value="0"></td>
+        <td><input type="number" id="ship-2" value="0"></td>
+        <td><input type="text" id="total-2" value="" disabled></td>
+      </tr>
+      <tr>
+        <td>Star Wars Magazine</td>
+        <td><input type="number" id="price-3" value="0"></td>
+        <td><input type="number" id="quantity-3" value="0"></td>
+        <td><input type="number" id="tax-3" value="0"></td>
+        <td><input type="number" id="ship-3" value="0"></td>
+        <td><input type="text" id="total-3" value="" disabled></td>
+      </tr>
+      <tr>
+        <td>Grand Total</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="grand-total" value="" disabled></td>
+      </tr>
+
+      <body onload="showTime()">
+       
+        <p id="current-time"></p>
+        <p id="system-time"></p>
+      </body>
+
+  </table>
+  <button onclick="calculateTotal()">Calculate Total</button>
+  <button onclick="clearEntries()">Clear Entries</button>
+  <script src="script.js"></script> 
+
+
+
+    <body>
+      <h2>Book Title Generator</h2>
+      <p>Looking for inspiration for your next book title? Look no further! Our book title generator uses a complex algorithm to generate titles that are sure to grab your readers' attention.</p>
+      <p>Simply click the "Generate" button below to get started:</p>
+      <button id="generateButton" onclick="generateTitle()">Generate</button>
+      <p>Your book title:</p>
+      <p id="title"></p>
+      
+      <script>
+        function generateTitle() {
+          var adjectives = ["Mysterious", "Gripping", "Suspenseful", "Haunting", "Enthralling", "Mesmerizing", "Intriguing"];
+          var nouns = ["Secrets", "Shadows", "Echoes", "Whispers", "Silence", "Mystery", "Darkness", "Nightmares"];
+          var randomNumber1 = Math.floor(Math.random() * adjectives.length);
+          var randomNumber2 = Math.floor(Math.random() * nouns.length);
+          var title = adjectives[randomNumber1] + " " + nouns[randomNumber2];
+          document.getElementById("title").innerHTML = "<span class='highlight'>" + title + "</span>";
+        }
+      </script>
+  </body>
+
+</body>
+<script>
+       
+       
